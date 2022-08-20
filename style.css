@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 360px;
+  height: 900px;
+}
+
+#wrap {
+  margin: 0;
+  padding: 0;
+  width: 360px;
+  height: 900px;
+  background-color: #f8fbfe;
+}
+
+/* 헤더 */
+#header {
+  width: inherit;
+  height: 150px;
+  line-height: 150px;
+  background-color: #8bc5ff;
+  color: #ffffff;
+}
+#header h1 {
+  text-align: center;
+  font-size: 46px;
+  font-family: "Silkscreen", cursive;
+}
+
+/* 메인 */
+#main {
+}
+#life-quote {
+  text-align: center;
+  width: inherit;
+  height: 100px;
+  background-color: #a0cfff;
+  color: #ffffff;
+  font-family: "Silkscreen", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+#date {
+  text-align: center;
+  background-color: #baddff;
+  height: 80px;
+  line-height: 80px;
+  font-size: 32px;
+  color: #ffffff;
+  font-family: "Silkscreen", cursive;
+}
+#todo {
+  height: 600px;
+  background-color: #e2f0ff;
+}
+/*투두 입력창*/
+#todo #todo-form {
+  text-align: center;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#todo #todo-form input {
+  height: 40px;
+  width: 250px;
+  font-size: 18px;
+  border: 2px solid #f6faff;
+  border-radius: 0.3em;
+  margin-right: 10px;
+  padding: 0 5px;
+  overflow: hidden;
+}
+#todo #todo-form button {
+  height: 40px;
+  width: 60px;
+  background-color: #8bc5ff;
+  border-radius: 0.5em;
+  border: 0;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Silkscreen", cursive;
+}
+#todo #todo-form button:active {
+  background-color: #577fa7;
+}
+/*투두 리스트*/
+#todo #todo-list {
+  margin: auto;
+  width: 330px;
+  height: 500px;
+  background-color: #f3f9ff;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+#todo-list .todo-box {
+  height: 40px;
+  line-height: 40px;
+  margin: 5px 10px;
+  font-size: 14px;
+}
+#todo-list .todo-box input {
+  height: 15px;
+  border: 2px solid #f6faff;
+  margin: 0 5px;
+}
+#todo-list .todo-box span {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+#todo-list .todo-box button {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+  background-color: #ffcece;
+  border: 0;
+}
+#todo-list .todo-box button:active {
+  background-color: #ba8c8c;
+}
+
+/* 자주 사용하는 클래스 */
+.hidden {
+  display: none;
+}
