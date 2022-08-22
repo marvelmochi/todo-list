@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   padding: 0;
@@ -72,6 +73,7 @@ body {
   margin-right: 10px;
   padding: 0 5px;
   overflow: hidden;
+  font-family: 'Gothic A1';
 }
 #todo #todo-form button {
   height: 40px;
@@ -111,6 +113,7 @@ body {
   display: inline-block;
   padding: 0 10px;
   font-size: 20px;
+  font-family: 'Gothic A1';
 }
 
 #todo-list .todo-box button {

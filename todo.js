@@ -4,7 +4,7 @@ const todoSave = document.querySelector("#todo-form button");
 const todoContainer = document.getElementById("todo-list");
 
 const TODO_KEY = "todo-list";
-const todoList = [];
+let todoList = [];
 
 const saveClicked = (event) => {
   event.preventDefault();
@@ -36,6 +36,8 @@ const paintTodo = (newTodo) => {
   todoSpan.innerText = newTodo.content;
   const deleteBtn = document.createElement("button");
   deleteBtn.innerText = "❌";
+  
+  deleteBtn.addEventListener("click", deleteTodo);
 
   todoBox.appendChild(checkBox);
   todoBox.appendChild(todoSpan);
@@ -43,13 +45,17 @@ const paintTodo = (newTodo) => {
   todoContainer.appendChild(todoBox);
 };
 
-const deleteTodo = () => {};
+const deleteTodo = (event) => {
+  console.log(event);
+};
 
 todoForm.addEventListener("submit", saveClicked);
 
-if (localStorage.getItem(TODO_KEY)) {
-  const todos = JSON.parse(localStorage.getItem(TODO_KEY));
-  //todos.forEach(paintTodo(todos.content));
+const savedTodos = localStorage.getItem(TODO_KEY);
 
-  //todos.forEach(console.log(""));
+if (savedTodos !== null) {
+  const parseTodos = JSON.parse(savedTodos);
+  todoList = parseTodos;
+  parseTodos.forEach(paintTodo);
 }
+
