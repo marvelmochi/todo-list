@@ -93,6 +93,8 @@ body {
   width: 330px;
   height: 500px;
   background-color: #f3f9ff;
+  border: 2px solid #deefff;
+  border-radius: 0.1em;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -111,16 +113,25 @@ body {
 #todo-list .todo-box span {
   display: inline-block;
   padding: 0 10px;
-  font-size: 20px;
+  font-size: 18px;
   font-family: "Gothic A1";
 }
-
+#todo-list .todo-box span:hover {
+  color: #8bc5ff;
+}
+#todo-list .todo-box span.checked:hover {
+  color: #cbcbcb;
+}
 #todo-list .todo-box button {
   width: 24px;
   height: 24px;
   margin: 0 5px;
-  background-color: #ffcece;
+  background-color: #baddff;
   border: 0;
+  border-radius: 1em;
+  font-family: "Gothic A1";
+  color: #ffffff;
+  font-weight: 900;
 }
 #todo-list .todo-box button:active {
   background-color: #ba8c8c;
@@ -128,10 +139,12 @@ body {
 
 /* 자주 사용하는 클래스 */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
-.clear {
-  color: gray;
+.checked {
+  color: #cbcbcb;
   text-decoration: line-through;
+  text-decoration-color: #cbcbcb;
+  text-decoration-thickness: 2px;
 }

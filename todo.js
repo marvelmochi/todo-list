@@ -36,8 +36,12 @@ const paintTodo = (newTodo) => {
 
   const todoSpan = document.createElement("span");
   todoSpan.innerText = newTodo.content;
+  if (newTodo.complete) {
+    checkBox.checked = true;
+    checkedToggle(todoSpan);
+  }
   const deleteBtn = document.createElement("button");
-  deleteBtn.innerText = "❌";
+  deleteBtn.innerText = "✖";
 
   deleteBtn.addEventListener("click", deleteTodo);
 
@@ -70,19 +74,28 @@ if (savedTodos !== null) {
 
 function checkTodo(event) {
   const checkTarget = event.target;
-  console.log(checkTarget.parentElement);
-  const parseTodos = JSON.parse(savedTodos);
-  console.log(parseTodos);
+  // 체크된 박스의 아이디 listening
+  const checkTargetId = parseInt(checkTarget.parentElement.id);
+  console.log(checkTargetId);
 
-  if (checkTarget.checked) {
-    console.log("checked!");
-  } else {
-    console.log("unchecked!");
-  }
+  const checkedBox = document.getElementById(`${checkTargetId}`);
+  const checkSpan = checkedBox.childNodes[1];
+  checkedToggle(checkSpan);
 
-  console.log(todoList);
+  todoList.forEach(function changeComplete(todo) {
+    if (todo.id === checkTargetId) {
+      if (todo.complete) {
+        todo.complete = false;
+      } else {
+        todo.complete = true;
+      }
+      console.log("change", todo);
+      return todo;
+    }
+  });
+  saveTodo();
 }
 
-function checkToggle(element) {
-  element.classList.toggle("clear");
+function checkedToggle(element) {
+  element.classList.toggle("checked");
 }
