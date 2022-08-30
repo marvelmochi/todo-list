@@ -1,12 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  width: 360px;
-  height: 900px;
+  background-color: #f3f9ff;
 }
 
 #wrap {
-  margin: 0;
+  margin: auto;
   padding: 0;
   width: 360px;
   height: 900px;
@@ -29,6 +28,7 @@ body {
 
 /* 메인 */
 #main {
+  margin: 0 auto;
 }
 #life-quote {
   text-align: center;
